@@ -1,7 +1,8 @@
-class IsMatch:
+from typing import List
 
+
+class Hot100_solution:
     def is_match(self, s: str, p: str) -> bool:
-
         m = len(s) + 1
         n = len(p) + 1
 
@@ -24,4 +25,13 @@ class IsMatch:
 
         return dp[len(s)][len(p)]
 
-
+    def maxArea(self, height: List[int]) -> int:
+        ans, left, right = 0, 0, len(height) - 1
+        while left <= right:
+            tmp = min(height[left], height[right]) * (right - left)
+            ans = max(ans, tmp)
+            if height[left] < height[right]:
+                left += 1
+            else:
+                right -= 1
+        return ans

@@ -1,7 +1,7 @@
 from typing import List
 
 
-class Hot100_solution:
+class Hot:
     def is_match(self, s: str, p: str) -> bool:
         m = len(s) + 1
         n = len(p) + 1
